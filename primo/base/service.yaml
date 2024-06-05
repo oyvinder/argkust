@@ -4,8 +4,7 @@ metadata:
   name: php-service
 spec:
   selector:
-    matchLabels:
-      app: welcome-php
+    iapp.kubernetes.io/name: welcome-php
   ports:
     - protocol: TCP
       port: 80
