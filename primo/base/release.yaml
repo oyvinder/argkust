@@ -21,3 +21,15 @@ spec:
       - image: quay.io/redhatworkshops/welcome-php:latest
         name: welcome-php
         resources: {}
+---        
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-service
+spec:
+  selector:
+    iapp.kubernetes.io/name: welcome-php
+  ports:
+    - protocol: TCP
+      port: 899
+      targetPort: 9376
